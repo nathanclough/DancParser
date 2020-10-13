@@ -1,4 +1,4 @@
-In this project I create a parser based of my lexical analyzer for a new languge DanC. 
+## In this project I create a parser based of my lexical analyzer for a new languge DanC. 
 
 The DanC programming language is based upon the following grammar (in BNF):  
 
