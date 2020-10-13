@@ -73,11 +73,11 @@ void Analyze(string fileContents) {
         char c = fileContents[index];
 
         // case c is alphabetical
-        if (isalpha(c)) {
+        if (isalpha(c) and !isupper(c)) {
             int endOfTokenIndex = index + 1;
 
             // find end of the lexeme 
-            while (isalpha(fileContents[endOfTokenIndex]) and endOfTokenIndex < length) {
+            while (isalpha(fileContents[endOfTokenIndex]) and !isupper(fileContents[endOfTokenIndex])and endOfTokenIndex < length) {
                 endOfTokenIndex++;
             }
 
@@ -107,9 +107,8 @@ void Analyze(string fileContents) {
         else if (isoperator(c)>-1){
             int endOfTokenIndex = index + 1;
 
-            while (isoperator(fileContents[endOfTokenIndex]) >6
-                                    and !(fileContents[endOfTokenIndex] == ';')
-                                    and endOfTokenIndex < index+2) {
+            while (isoperator(fileContents[endOfTokenIndex]) > 0
+                                    and IsOperatorLexeme(fileContents.substr(index,endOfTokenIndex -index +1)) != 14 ){
                 endOfTokenIndex++;
             }
             string temp = fileContents.substr(index, endOfTokenIndex - index);
