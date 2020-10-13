@@ -1,0 +1,12 @@
+f:=1;
+i:=1;
+read(n);
+hEllo
+while i <= n do
+	f:=f*i;
+	i:=i+1
+	jeep:=&#;
+	j++;
+
+od;
+k>>j
